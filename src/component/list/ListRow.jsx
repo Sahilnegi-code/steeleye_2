@@ -1,7 +1,10 @@
 import styles from "./ListRow.module.css";
-
-const ListCell = ({ children }) => {
-  return <tr className={styles.cell}>{children}</tr>;
+// , setSelectedOrder ,index
+const ListCell = ({ children , setSelectedOrder , index  }) => {
+  const setIndex = () =>{
+    setSelectedOrder({children , index});
+  }
+  return <tr onClick={setIndex}  className={styles.cell}>{children}</tr>;
 };
 
 export default ListCell;
